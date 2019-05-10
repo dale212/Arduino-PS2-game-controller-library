@@ -1,7 +1,7 @@
 /*  Psx_aj Controller Decoder Library (Psx_aj.h)
  
  April 20, 2018
- Original code PsX.h was written by Kevin Ahrendt
+ Original code PsX.j was written by Kevin Ahrendt
  Modifications by Dale Heatherington
  
  Changed library name from PsX to Psx_aj.  The "aj" suffix means "Analog Joystick".
@@ -16,7 +16,7 @@
  to left-shift because analog joystick values were in reverse bit order.
  Side effect: Now the digital button bits are reversed from the original
  so I changed the button hex defines to match.
- Analog joystick values are returned in public variables after each read():
+ Analog joystick values are in public variables:
  right_x_joy, right_y_joy, left_x_joy, left_x_joy
  
  User must push "analog" button on controller to enable analog mode or enable
@@ -87,7 +87,7 @@ class Psx_aj
 		unsigned int read();								// Returns the status of the button presses in an unsignd int.
 															// The value returned corresponds to each key as defined above.
     
-        byte left_x_joy;                //Analog joystick values.  These are updated by read() function.
+        byte left_x_joy;                //Analog joystick values
         byte left_y_joy;
         byte right_x_joy;
         byte right_y_joy;

@@ -26,16 +26,18 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    PS2 wire colors
-    1.  Data    Brown   (needs 3.3K pullup resistor)
-    2.  Command Orange
-    3.  Vib     grey    (not used)
-    4.  Ground  Black
-    5.  +3.3V   Red
-    6.  Att     Yellow  (also called "select")
-    7.  Clock   Blue
-    8.  N/C     White   (not used)
-    9.  Ack     Green   (not used)
+  PS2 wire colors
+  1. Brown:  Data (PS2 output, needs 3.3K pullup resistor)
+  2. Orange: Command (PS2 input)
+  3. Gray:   Vibrate (not used)
+  4. Black:  Ground
+  5. Red:    Power 3.3V
+  6. Yellow: Att (PS2 input. also called Select)
+  7. Blue:   Clock (PS2 input)
+  8. White:  N/C
+  9. Green:  Ack (Not used)
+
+  Logic levels are 3.3V
     
     
 */

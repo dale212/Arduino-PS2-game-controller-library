@@ -12,7 +12,7 @@
  
  To make it work with the M0 Arm boards I had to add some small delays in
  the bit shifting code to make sure both rising and falling clock edges
- were within the valid comand bit period.
+ were within the valid command bit period.
  
  I modified code to read analog joystick values and changed _dataIn bit shifts
  to left-shift because analog joystick values were in reverse bit order.
@@ -63,7 +63,7 @@ byte Psx_aj::shift(byte _dataOut)		// Does the actual shifting, both in and out 
 	for (_i = 0; _i <= 7; _i++)
 	{
 		
-        //noInterrupts();
+        //noInterrupts();       //If you really need to disable interrupts uncomment
         
         
 		if ( _dataOut & (1 << _i) ) digitalWrite(_cmndPin, HIGH);	// Writes out the _dataOut bits
@@ -83,7 +83,7 @@ byte Psx_aj::shift(byte _dataOut)		// Does the actual shifting, both in and out 
 
 		digitalWrite(_clockPin, HIGH);
 		delayMicroseconds(_delay);
-        //interrupts();
+        //interrupts();                             //interrupts enable again (uncomment)
 	}
     
     delayMicroseconds(_delay * 2);
